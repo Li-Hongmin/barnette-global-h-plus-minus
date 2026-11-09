@@ -1,0 +1,13 @@
+# Supplementary material: Exponentially many Barnette graphs with the global H^{+-} property
+
+Requirements: Python 3.9+; `networkx` (>=3) for `check_family.py`, `check_local.py` and `check_seed.py`. `verify_reflection_40_state_h_plus_minus.py` and `check_final.py` use only the standard library. Tested with Python 3.9.6 and networkx 3.2.1 on macOS. Every script asserts its checks and exits with a nonzero status on failure; a successful run ends with a line ending in `PASSED` or `VERIFIED`.
+
+- `check_local.py` — Table 1 (all 2^8 gadget subsets with degree 2 at a,b,c,d), the seven minimal covers, the triangle-free intersection graph, the cube witnesses and their supports, the six cycles giving global H^{+-} for the cube, and the boundary-fixed cap isomorphism (8.10).
+- `verify_reflection_40_state_h_plus_minus.py` — rebuilds the transfer rows from the full local enumeration. It then checks the 22-state domain, the 40-state forward closure under the four maps, the retained-position 0/1 separations, the separation of all 56 ordered pairs of gadget edges by some source-to-target interface pattern, and the birth states.
+- `check_final.py` — direct check of the final layer of Theorem 8.2: for each source role, enumerates all 2^8 gadget subsets and asserts that exactly one completes the role to a Hamilton cycle, with incidence row equal to (7.15); asserts that these rows separate all 56 ordered pairs of final gadget edges; and asserts the conditions (7.15a) for all 40 states and all 8 final positions (640 conditions), which give the pairs of an older edge and a new final edge.
+- `check_seed.py` — seed conditions of Theorem 8.2 for the cube: the roles of the A-family and L witnesses, the signed states (P,N) of the ten retained edges inside the 40-state list, and joint separation J(r,s) for all ordered pairs.
+- `check_family.py [maxdepth]` — builds every standard word to depth 6 (n <= 32) and every reflected word to depth 5 (256 graphs). For each graph it checks the Barnette conditions (cubic, bipartite, planar, 3-connected) and global H^{+-} by exhaustive Hamilton-cycle enumeration. It also counts isomorphism classes and old-core-fixed rooted classes. Results are in `check_family_results.json`; about 30 s on a laptop. Objects are released and garbage is collected between graphs, so memory stays bounded during the reflected depth-5 run; the output of the tested run is in `check_family_output.txt`.
+
+Observed: every tested graph is Barnette and has global H^{+-}. The rooted class counts are 1,1,1,2,4,8,16 (= 2^{max(k-2,0)}), and the unlabelled class counts are 1,1,1,2,3,6,10 for k = 0..6.
+
+These are finite checks of the statements and are not a proof. The theorems rest on the written arguments in the paper.

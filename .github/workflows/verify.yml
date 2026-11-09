@@ -1,0 +1,54 @@
+name: verify
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install networkx==3.4.2
+      - name: Prepare a fresh working copy
+        run: cp -r verification work
+      - name: "Table 1, minimal covers, cube witnesses, cap isomorphism"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python check_local.py
+      - name: "40-state transfer closure and separations"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python verify_reflection_40_state_h_plus_minus.py
+      - name: "Final layer of Theorem 8.2"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python check_final.py
+      - name: "Seed conditions of Theorem 8.2"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python check_seed.py
+      - name: "Family check to depth 6 (standard) / 5 (reflected)"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python check_family.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-output
+          path: work/
+          retention-days: 14

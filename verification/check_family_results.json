@@ -1,0 +1,107 @@
+[
+ {
+  "python": "3.9.6",
+  "networkx": "3.2.1"
+ },
+ {
+  "k": 0,
+  "n": 8,
+  "words": 1,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 1,
+  "rooted": 1,
+  "bound": 1
+ },
+ {
+  "k": 1,
+  "n": 12,
+  "words": 1,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 1,
+  "rooted": 1,
+  "rooted_pred": 1,
+  "bound": 1
+ },
+ {
+  "k": 2,
+  "n": 16,
+  "words": 2,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 1,
+  "rooted": 1,
+  "rooted_pred": 1,
+  "bound": 1
+ },
+ {
+  "k": 3,
+  "n": 20,
+  "words": 4,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 2,
+  "rooted": 2,
+  "rooted_pred": 2,
+  "bound": 1
+ },
+ {
+  "k": 4,
+  "n": 24,
+  "words": 8,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 3,
+  "rooted": 4,
+  "rooted_pred": 4,
+  "bound": 1
+ },
+ {
+  "k": 5,
+  "n": 28,
+  "words": 16,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 6,
+  "rooted": 8,
+  "rooted_pred": 8,
+  "bound": 1
+ },
+ {
+  "k": 6,
+  "n": 32,
+  "words": 32,
+  "barnette": true,
+  "hpm_all": true,
+  "classes": 10,
+  "rooted": 16,
+  "rooted_pred": 16,
+  "bound": 1
+ },
+ {
+  "reflected_k": 1,
+  "graphs": 1,
+  "ok": true
+ },
+ {
+  "reflected_k": 2,
+  "graphs": 4,
+  "ok": true
+ },
+ {
+  "reflected_k": 3,
+  "graphs": 16,
+  "ok": true
+ },
+ {
+  "reflected_k": 4,
+  "graphs": 64,
+  "ok": true
+ },
+ {
+  "reflected_k": 5,
+  "graphs": 256,
+  "ok": true
+ }
+]
