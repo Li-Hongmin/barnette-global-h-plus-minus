@@ -329,7 +329,7 @@ def assert_relation(
     }, (actual, expected)
 
 
-def main() -> None:
+def main() -> dict[str, object]:
     all_patterns = {name: local_patterns(site) for name, site in SITES.items()}
     maps = {name: relation(patterns) for name, patterns in all_patterns.items()}
 
@@ -519,6 +519,23 @@ def main() -> None:
     print("interface_ordered_separation=" + ",".join(f"{name}:{separation_counts[name]}" for name in SITES))
     print("birth_states=" + repr(birth_records))
     print("REFLECTION_40_STATE_H_PLUS_MINUS_VERIFIED")
+    return {
+        "original_sigma_states": len(sigma),
+        "reflected_sigma_failures": {
+            name: len(reflected_failures[name]) for name in ("CEN_ref", "UV_ref")
+        },
+        "four_map_forward_closure": len(sigma_star),
+        "new_states_beyond_sigma": len(sigma_star - sigma),
+        "item2_checks": item2_counts,
+        "retained_pair_joint_checks": joint_pair_counts,
+        "interface_ordered_separation": separation_counts,
+        "birth_states": birth_records,
+    }
+
+
+def result() -> dict[str, object]:
+    """Execute every original assertion and expose its cited quantities."""
+    return main()
 
 
 if __name__ == "__main__":

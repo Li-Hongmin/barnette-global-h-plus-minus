@@ -1,0 +1,24 @@
+{
+ "witnesses": 9,
+ "distinct_supports": 8,
+ "states": 40,
+ "joint_separation": true,
+ "provenance": {
+  "schema": "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/provenance-v1.json",
+  "command": [
+   "python",
+   "verification/osaudit_result.py",
+   "verification/check_seed.py"
+  ],
+  "cwd": ".",
+  "inputs": [
+   {
+    "path": "verification/check_seed.py",
+    "sha256": "0486514bbc417e00e6e34275228f6be10c74d92a1ee3d5e5014ffdba1d9f495f"
+   }
+  ],
+  "commit": "a7b042c53e4942caa63391a76198737dc585722e",
+  "now": "2026-11-18T08:35:20+00:00",
+  "osaudit": "0.7.0"
+ }
+}

@@ -76,8 +76,8 @@ def classes(gs):
         if not any(nx.is_isomorphic(G,H) for H in L): L.append(G)
     return sum(len(v) for v in reps.values())
 
-if __name__=='__main__':
-    maxk=int(sys.argv[1]) if len(sys.argv)>1 else 6
+def result(maxk=6):
+    """Run the original exhaustive checks and return their cited values."""
     res=[dict(python=platform.python_version(),networkx=nx.__version__)]
     print(res[0],flush=True)
     Q=nx.Graph(CUBE); ok,nc=global_hpm(Q)
@@ -105,5 +105,9 @@ if __name__=='__main__':
         print(dict(reflected_k=k,graphs=cnt,all_barnette_and_hpm=allok),flush=True)
         res.append(dict(reflected_k=k,graphs=cnt,ok=allok))
         assert allok and cnt==4**(k-1), (k,cnt)
-    json.dump(res,open('check_family_results.json','w'),indent=1)
     print('FAMILY_CHECKS_PASSED')
+    return {"family": res}
+
+if __name__=='__main__':
+    result(int(sys.argv[1]) if len(sys.argv)>1 else 6)
+

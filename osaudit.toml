@@ -1,0 +1,42 @@
+schema = "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/audit-v1.json"
+[paper]
+md = ["paper/paper.md"]
+[results]
+files = [
+  "verification/osaudit_local_results.json",
+  "verification/osaudit_seed_results.json",
+  "verification/osaudit_final_results.json",
+  "verification/osaudit_reflection_results.json",
+  "verification/osaudit_family_results.json",
+]
+instruments = ["verification/*.py"]
+
+[[results.depends]]
+file = "verification/osaudit_local_results.json"
+instruments = ["verification/osaudit_result.py", "verification/check_local.py"]
+
+[[results.depends]]
+file = "verification/osaudit_seed_results.json"
+instruments = ["verification/osaudit_result.py", "verification/check_seed.py"]
+
+[[results.depends]]
+file = "verification/osaudit_final_results.json"
+instruments = ["verification/osaudit_result.py", "verification/check_final.py"]
+
+[[results.depends]]
+file = "verification/osaudit_reflection_results.json"
+instruments = ["verification/osaudit_result.py", "verification/verify_reflection_40_state_h_plus_minus.py"]
+
+[[results.depends]]
+file = "verification/osaudit_family_results.json"
+instruments = ["verification/osaudit_result.py", "verification/check_family.py"]
+
+[[numbers.allow]]
+value = "2026"
+file = "paper/paper.md"
+reason = "Bibliographic year of the cited external preprint, not a result of this study."
+
+[[numbers.allow]]
+value = "25"
+file = "paper/paper.md"
+reason = "Day in the reported literature-search date 25 October 2026, not a study result."

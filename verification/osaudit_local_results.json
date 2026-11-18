@@ -1,0 +1,24 @@
+{
+ "traversals": 6,
+ "cube_cycles": 6,
+ "covering_pairs": 7,
+ "cap_isomorphism": true,
+ "provenance": {
+  "schema": "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/provenance-v1.json",
+  "command": [
+   "python",
+   "verification/osaudit_result.py",
+   "verification/check_local.py"
+  ],
+  "cwd": ".",
+  "inputs": [
+   {
+    "path": "verification/check_local.py",
+    "sha256": "d89beff119ff82f68e85bfd63823e28edad3c62819f95627477a1a62116d7932"
+   }
+  ],
+  "commit": "a7b042c53e4942caa63391a76198737dc585722e",
+  "now": "2026-11-18T08:35:19+00:00",
+  "osaudit": "0.7.0"
+ }
+}

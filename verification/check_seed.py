@@ -38,3 +38,6 @@ print('witnesses',len(allw),'J nonempty for all ordered pairs:',Jok)
 assert len(allw)==9 and len({frozenset(w&R) for w in allw})==8 and Jok
 assert all(PN[r] in S40 for r in R)
 print('SEED_CHECKS_PASSED')
+result = {"witnesses": len(allw), "distinct_supports": len({frozenset(w&R) for w in allw}),
+          "states": len(set(S40)), "joint_separation": Jok}
+

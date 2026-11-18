@@ -1,0 +1,79 @@
+{
+ "original_sigma_states": 22,
+ "reflected_sigma_failures": {
+  "CEN_ref": 10,
+  "UV_ref": 21
+ },
+ "four_map_forward_closure": 40,
+ "new_states_beyond_sigma": 18,
+ "item2_checks": {
+  "CEN": 240,
+  "UV": 240,
+  "CEN_ref": 240,
+  "UV_ref": 240
+ },
+ "retained_pair_joint_checks": {
+  "CEN": 30,
+  "UV": 30,
+  "CEN_ref": 30,
+  "UV_ref": 30
+ },
+ "interface_ordered_separation": {
+  "CEN": 56,
+  "UV": 56,
+  "CEN_ref": 56,
+  "UV_ref": 56
+ },
+ "birth_states": {
+  "CEN": {
+   "ua": "ABDEL/AC",
+   "ab": "ABCD/AEL",
+   "bv": "ACDEL/AB",
+   "xc": "ACDEL/AB",
+   "cd": "ABCE/ADL",
+   "dy": "ABDEL/AC"
+  },
+  "UV": {
+   "ab": "ABCE/ADL",
+   "xc": "ACDEL/AB",
+   "cd": "ABC/ADEL",
+   "dy": "ABDEL/AC",
+   "ad": "ACDEL/AB",
+   "bc": "ABDEL/AC"
+  },
+  "CEN_ref": {
+   "ua": "ACDEL/AB",
+   "ab": "ABCE/ADL",
+   "bv": "ABDEL/AC",
+   "xc": "ABDEL/AC",
+   "cd": "ABCD/AEL",
+   "dy": "ACDEL/AB"
+  },
+  "UV_ref": {
+   "ab": "ABCD/AEL",
+   "xc": "ABDEL/AC",
+   "cd": "ABC/ADEL",
+   "dy": "ACDEL/AB",
+   "ad": "ABDEL/AC",
+   "bc": "ACDEL/AB"
+  }
+ },
+ "provenance": {
+  "schema": "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/provenance-v1.json",
+  "command": [
+   "python",
+   "verification/osaudit_result.py",
+   "verification/verify_reflection_40_state_h_plus_minus.py"
+  ],
+  "cwd": ".",
+  "inputs": [
+   {
+    "path": "verification/verify_reflection_40_state_h_plus_minus.py",
+    "sha256": "7714749e1f0d2387f195ba36a69f7d26c00df992e57311ef1307ef892f8b114f"
+   }
+  ],
+  "commit": "a7b042c53e4942caa63391a76198737dc585722e",
+  "now": "2026-11-18T08:35:21+00:00",
+  "osaudit": "0.7.0"
+ }
+}
