@@ -1,0 +1,127 @@
+{
+ "family": [
+  {
+   "python": "3.13.7",
+   "networkx": "3.4.2"
+  },
+  {
+   "k": 0,
+   "n": 8,
+   "words": 1,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 1,
+   "rooted": 1,
+   "bound": 1
+  },
+  {
+   "k": 1,
+   "n": 12,
+   "words": 1,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 1,
+   "rooted": 1,
+   "rooted_pred": 1,
+   "bound": 1
+  },
+  {
+   "k": 2,
+   "n": 16,
+   "words": 2,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 1,
+   "rooted": 1,
+   "rooted_pred": 1,
+   "bound": 1
+  },
+  {
+   "k": 3,
+   "n": 20,
+   "words": 4,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 2,
+   "rooted": 2,
+   "rooted_pred": 2,
+   "bound": 1
+  },
+  {
+   "k": 4,
+   "n": 24,
+   "words": 8,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 3,
+   "rooted": 4,
+   "rooted_pred": 4,
+   "bound": 1
+  },
+  {
+   "k": 5,
+   "n": 28,
+   "words": 16,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 6,
+   "rooted": 8,
+   "rooted_pred": 8,
+   "bound": 1
+  },
+  {
+   "k": 6,
+   "n": 32,
+   "words": 32,
+   "barnette": true,
+   "hpm_all": true,
+   "classes": 10,
+   "rooted": 16,
+   "rooted_pred": 16,
+   "bound": 1
+  },
+  {
+   "reflected_k": 1,
+   "graphs": 1,
+   "ok": true
+  },
+  {
+   "reflected_k": 2,
+   "graphs": 4,
+   "ok": true
+  },
+  {
+   "reflected_k": 3,
+   "graphs": 16,
+   "ok": true
+  },
+  {
+   "reflected_k": 4,
+   "graphs": 64,
+   "ok": true
+  },
+  {
+   "reflected_k": 5,
+   "graphs": 256,
+   "ok": true
+  }
+ ],
+ "provenance": {
+  "schema": "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/provenance-v1.json",
+  "command": [
+   "python",
+   "verification/osaudit_result.py",
+   "verification/check_family.py"
+  ],
+  "cwd": ".",
+  "inputs": [
+   {
+    "path": "verification/check_family.py",
+    "sha256": "9592a16983124d6facae47921244caedb4082e91a8da3a64825747687eb9c91d"
+   }
+  ],
+  "commit": "46f65672bcd413b6d1ce5f12c3ab670f756ee86a",
+  "now": "2026-11-18T08:37:27+00:00",
+  "osaudit": "0.7.0"
+ }
+}

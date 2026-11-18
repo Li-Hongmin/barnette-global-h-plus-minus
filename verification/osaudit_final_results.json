@@ -1,0 +1,24 @@
+{
+ "final_rows": 6,
+ "new_new_pairs": 56,
+ "old_new_conditions": 640,
+ "states": 40,
+ "provenance": {
+  "schema": "https://github.com/ASSERT-KTH/assert-research-agent/blob/main/schemas/provenance-v1.json",
+  "command": [
+   "python",
+   "verification/osaudit_result.py",
+   "verification/check_final.py"
+  ],
+  "cwd": ".",
+  "inputs": [
+   {
+    "path": "verification/check_final.py",
+    "sha256": "e467ebf566c672cb04f8339d48ce9fb8ed5a383f6fd378521add5bbd71d74e65"
+   }
+  ],
+  "commit": "a7b042c53e4942caa63391a76198737dc585722e",
+  "now": "2026-11-18T08:35:21+00:00",
+  "osaudit": "0.7.0"
+ }
+}
