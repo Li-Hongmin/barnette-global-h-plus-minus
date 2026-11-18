@@ -50,6 +50,13 @@ def main():
             mixed += 2
     print(f"final_rows_match_7.15=6 new_new_pairs={pairs} old_new_conditions={mixed}")
     print("FINAL_LAYER_7_15_VERIFIED")
+    return {"final_rows": len(rows), "new_new_pairs": pairs,
+            "old_new_conditions": mixed, "states": len(sigma_star)}
+
+
+def result():
+    """Execute every original assertion and expose its cited quantities."""
+    return main()
 
 if __name__ == "__main__":
     main()

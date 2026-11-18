@@ -37,3 +37,6 @@ img={frozenset((m[x],m[y])) for x,y in F0}; capok=img=={frozenset(e) for e in F1
 print('cap map is boundary-fixed isomorphism:', capok)
 assert capok and all(m[v]==v for v in 'UVXY') and len(set(m.values()))==len(m)
 print('LOCAL_CHECKS_PASSED')
+result = {'traversals': len(table), 'cube_cycles': len(cyc),
+          'covering_pairs': len(pairs), 'cap_isomorphism': capok}
+
